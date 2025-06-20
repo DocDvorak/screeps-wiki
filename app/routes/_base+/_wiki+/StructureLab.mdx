@@ -28,13 +28,17 @@ A lab containing a boost and energy can be used to boost a creep's bodyparts wit
 
 ## Un-Boosting
 
-A lab can remove the boosts from a creep and drop half of the used boost on the ground. You can then pick the reosurces up, or catch them with a container to be used again. This does however, apply a cooldown which dependent on total-lab reaction time in all steps, can be quite large. While the lab is in cooldown it can not react or unboost.
+A lab can unboost a single type of part on a single creep to remove the boost effect and refund some of the resources used. Refunded boosts are dropped on the ground at the creep's position.
+
+Unboosting a creep always returns 50% of the original boost mineral cost, regardless of the creep's `ticksToLive`. To optimize boost utilization/recovery, a creep should be fully unboosted as close to 1 TTL as possible. Energy is never refunded.
+
+On a successful `unboostCreep()` action, a cooldown will begin. While the cooldown is active the lab can still boost creeps, but it cannot unboost or run reactions. The duration of the cooldown is the sum of the reaction cooldown time of all boosts (from base minerals) used on the affected part type. For example, if a creep with 40 GH WORK parts is unboosted, the cooldown will be 3,000 ticks. 40 XGH2O WORK parts triggers a 17,000 tick cooldown.
 
 ## Reverse Reaction
 
 Labs can also be used to break down boosts & compounds into their base parts. This is useful if you have too much, or if you simply want the base elements. In a swap from running a reaction, you need only 1 lab that is providing the boost/compound to break down and can use however many other labs to receive the result, however keep in mind this will be two compounds.
 
-## Basic Automatic Lab usage.
+## Basic Automatic Lab Usage
 
 To automatically create compounds and boosts you need a few systems. First, you will need a creep or creeps to supply the source labs with the mineral/compounds to use in the reaction. Then, you need a system to detect when the source-lab has enough resource to continue the reaction and, that the reacting labs are not on a cooldown. After reaction(s), you then need a creep or creeps to withdraw the produced boost/compound and transfer it to a storage.
 

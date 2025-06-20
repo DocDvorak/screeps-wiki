@@ -1,6 +1,8 @@
 ---
 title: RenewCreep vs SpawnCreep
 description: Creeps have a limited life-span once created from a spawn. Every creep (without a claim part) starts with a 1500 ticksToLive property that decreases at a rate of 1 per game tick. Once ticksToLive reaches 0, the creep dies leaving a tombstone.
+categories:
+  - Strategy
 ---
 
 While creeps do have to be first-created with the spawnCreep method, once created it is possible using the spawn's renewCreep method to increase their ticksToLive possibly, forever (as long as they do not have a claim part and to maximum of 1500 ticksToLive).

@@ -1,10 +1,12 @@
 ---
 title: Account-level Resource
-description: An Account-level Resource is a resource in Screeps that is linked to the user's account and not to anything in-game.
+description: An account-level resource is an item that is linked to the user's account. They are not associated with any particular shard or room, and they persist across spawns/respawns until they are sold or consumed.
 categories:
   - Game_Knowledge
   - Resources
 ---
+
+With the exception of credits, most account-level resources are only available on the official server.
 
 ## Credits
 
@@ -12,35 +14,54 @@ The main currency of Screeps, credits are linked to the user's account and are u
 
 ## CPU Unlocks
 
-CPU Unlocks allow for a user to unlock their full CPU as determined by their [GCL](/Global_Control_Level) and [Shard](/Shard) limitations for 24 hours. They can be purchased via the Screeps store, Steam and through the in-game market via credits.
+CPU Unlocks allow for a user to unlock their full CPU as determined by their [GCL](/Global_Control_Level) for 24 hours.
+
+CPU unlocks do not supersede any shard-wide CPU limits. In other words, if a GCL 10 player only has creeps and structures on shard3, they will still be limited to 20 CPU per tick even with an unlocked CPU. If that player respawns or travels to another shard, they will be able to use their remaining 100 CPU per tick on the other shard(s).
+
+They can be purchased via the Screeps store, Steam and through the in-game market via credits. CPU can also be unlocked permanently via a one-time purchase from the Screeps store or Steam store.
 
 ## Pixels
-Pixels are used for generating various decorations. They are created into the game by users using `Game.cpu.generatePixel()` at the cost of 10000 [CPU](/CPU) from their [bucket](/CPU) or by purchasing through the Screeps store/Steam. They can also be obtained and sold via the in-game market.
 
-## Decorations
+Pixels are used for generating various decorations. They can be obtained in many ways:
+* Generate with 10,000 [CPU](/CPU) from the CPU bucket by running `Game.cpu.generatePixel()`
+  * Each `generatePixel` call generates 1 pixel
+  * 10,000 CPU is the maximum size of the CPU bucket; players may wish to time their pixel generation to avoid running out of CPU at an inopportune moment
+* Purchase with in-game credits via the [market](/Market)
+* Purchase with real world currency from the Screeps store
+* Purchase via the Steam marketplace
 
-Decorations are a collection of various types of visual additions to the Screeps world. By spending 500 pixels, you can generate a random decoration. You have the option to use 2000 pixels in order to get a decoration of a specific theme. Decorations are stored in a user's inventory and can be transferred to Steam and purchased or sold through Steam's marketplace. You can not trade or purchase decorations in-game currently. Decorations vary in color depending on their theme and rarity, rare decorations can even be seen on the map.
+### Decorations
 
-## Graffiti
+Decorations are a collection of cosmetic effects that players can publicly display in Screeps: World.
+
+Decorations are tied to a user's account. Players can receive a random decoration by "pixelizing" (consuming) 500 pixels, or a decoration from a specific theme group by pixelizing with 2,000 pixels. Unwanted decorations can be converted into 400 pixels.
+
+Like other account-level items, decorations can be transferred to Steam and purchased or sold through Steam's marketplace. Currently, players can not trade decorations via the in-game market.
+
+A decoration may have one or more customization options available depending on its type and rarity.
+
+#### Graffiti
 
 A wide collection of various types of images that can be applied to a user's owned or reserved rooms.
 
-## Wall Texture
+#### Wall Texture
 
 A wide collection of wallpapers that can be applied to a user's owned or reserved rooms and shows up on the natural walls of the room.
 
-## Floor Texture
+#### Floor Texture
 
 A wide collection of wallpapers that can be applied to a user's owned or reserved rooms and shows up on the floor (plain/swamps) of a room.
 
-## Creep Decorations
+#### Creep Decorations
 
 Creep decorations are a collection of different 'parts' that can be applied to creeps via a filter. This allows for some creeps to have different decorations on them based on their name, and you can combine different creep decorations to achieve many different looks.
 
-## Badges
+#### Badges
 
 A collection of user badges a player can obtain and use for their account.
 
 ## Access Keys
 
-Access keys are currency used to allow access to [Seasonal World](/Seasonal_World) and server related events/content. They were also used in purchasing early access to [Arena](https://screeps.com/forum/topic/3090/screeps-arena-preorder).
+Access Keys are used to spawn in the [Seasonal World](/Seasonal_World) and other related events/content.
+
+They were also used in purchasing early access to [Arena](https://screeps.com/forum/topic/3090/screeps-arena-preorder).
