@@ -4,13 +4,28 @@ description: Minerals are part of the basic resource types, along with energy an
 categories:
   - Stubs
   - Game_Knowledge
+  - Resources
 ---
 
 ## Mineral Harvesting
 
-Minerals can be harvested in any rooms with a mineral and an accompanying extractor present. In rooms with a controller both the controller itself and the extractor need to be owned by yourself to be able to harvest. In rooms without a controller (Center and [Source Keeper](/Source_Keeper) Rooms) anyone can harvest the minerals.
+Minerals can be harvested from any room with a mineral and an accessible extractor. In rooms with a controller, both the controller itself and the extractor need to be owned by a player for their creeps to be able to harvest. In rooms with minerals but no controller ([sector center](/Map/#center-sector-room) and [source keeper](/Source_Keeper) rooms), publicly-accessible extractors are always present, so anyone can harvest from them.
+
 Depending on circumstances players may choose different [harvesting strategies](/Mineral_Mining).
 
-## Boost Production
+## Uses
 
-Minerals can be used to produce [boosts](/Boosts) in [labs](/StructureLab), which can be used to [improve](https://docs.screeps.com/resources.html#Creep-boosts) creeps' parts' efficiency. In general players choose to place their labs close to each other, as their [reactions](https://docs.screeps.com/resources.html#Mineral-compounds) requires the target lab to be within range 2 of both source labs. Placing them effectively lets the player only use the minimum of 2 labs and use the rest (up to 8) for the same reaction, improving lab throughput.
+### Boosts
+
+Minerals can be combined in [labs](/StructureLab) to produce [boosts](/Boosts), which can be used to [improve](https://docs.screeps.com/resources.html#Creep-boosts) creep part effectiveness.
+
+### Commodities
+
+Minerals can also be used in [factories](/StructureFactory):
+- Base minerals or ghodium can be combined with energy to produce a compressed form of that mineral
+- Compressed minerals can be combined with resources harvested from [deposits](https://docs.screeps.com/resources.html#Harvesting-1) to produce [commodities](https://docs.screeps.com/resources.html#Commodities), which can then be sold to NPCs or other players on the [market](/Market)
+
+### Ghodium
+
+Ghodium is a mineral compound produced by reacting UL and ZK. It can be processed into boosts with additional reactions,
+but it can also be used to launch nukes or gain additional safe mode activations.
